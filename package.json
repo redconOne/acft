@@ -1,0 +1,19 @@
+{
+  "name": "acft",
+  "version": "1.0.0",
+  "description": "```\r 1. npm install\r 2. npm start\r ```",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redconOne/acft.git"
+  },
+  "author": "Ming Lee Ng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redconOne/acft/issues"
+  },
+  "homepage": "https://github.com/redconOne/acft#readme"
+}
