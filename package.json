@@ -4,6 +4,7 @@
   "description": "```\r 1. npm install\r 2. npm start\r ```",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/redconOne/acft/issues"
   },
-  "homepage": "https://github.com/redconOne/acft#readme"
+  "homepage": "https://github.com/redconOne/acft#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^3.1.2",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.10.0",
+    "mongoose": "^5.13.15",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "validator": "^13.7.0"
+  }
 }
