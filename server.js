@@ -11,8 +11,6 @@ const mainRoutes = require('./routes/main');
 const scoresRoutes = require('./routes/scores');
 const port = process.env.PORT || 5000;
 
-console.log('somewhere here');
-
 require('dotenv').config({ path: './config/.env' });
 
 // Passport config
