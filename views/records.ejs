@@ -2,56 +2,49 @@
 
 <body>
     <%-include("./partials/navigation")-%>
-  <div class="">
-    <h1 class="">ACFT Scores</h1>
+  
+    <div>
+        <h1>Previous ACFT Records</h1>
 
-    <div class="">
-        <h3 class="title">3 Repetition Maximum Deadlift (MDL)</h3>
-        <div class="">
-            <input id="MDL-slider" type="range" min="0" max="340" value="170">
-            <span id="MDL-points"></span>
+        <div>
+            <ul>
+                <li>
+                    <div class="dateCol">Date</div>
+                    <div class="MDLCol">MDL</div>
+                    <div class="SPTCol">SPT</div>
+                    <div class="HRPCol">HRP</div>
+                    <div class="SDCCol">SDC</div>
+                    <div class="PLKCol">PLK</div>
+                    <div class="TMRCol">2MR</div>
+                </li>
+                <% tests.forEach( test => { %>
+                    <li data-id="<%= test._id%>">
+                        <span class="dateCol">
+                            <%= test.date %>
+                        </span>
+                        <span class="MDLCol">
+                            <%= test.MDL %>
+                        </span>
+                        <span class="SPTCol">
+                            <%= test.SPT %>
+                        </span>
+                        <span class="HRPCol">
+                            <%= test.HRP %>
+                        </span>
+                        <span class="SDCCol">
+                            <%= test.SDC %>
+                        </span>
+                        <span class="PLKCol">
+                            <%= test.PLK %>
+                        </span>
+                        <span class="TMRCol">
+                            <%= test.TMR %>
+                        </span>
+                    </li>
+                <% }) %>
+            </ul>
         </div>
     </div>
-    <div class="card">
-        <h3 class="title">Standing Power Throw (SPT)</h3>
-        <div class="slidecontainer">
-            <input id="SPT-slider" type="range" min="0" max="125" value="62">
-            <span id="SPT-points"></span>
-        </div>
-    </div>
-    <div class="card">
-        <h3 class="title">Hand Release Pushups (HRP)</h3>
-        <div class="slidecontainer">
-            <input id="HRP-slider" type="range" min="0" max="60">
-            <span id="HRP-points"></span>
-        </div>
-    </div>
-    <div class="card">
-        <h3 class="title">Sprint Drag Carry (SDC)</h3>
-        <div class="slidecontainer">
-            <input id="SDC-minutes" type="range" min="0" max="3">
-            <input id="SDC-seconds" type="range" min="0" max="59">
-            <span id="SDC-points"></span>
-        </div>
-    </div>
-    <div class="card">
-        <h3 class="title">Plank (PLK)</h3>
-        <div class="slidecontainer">
-            <input id="PLK-minutes" type="range" min="0" max="4">
-            <input id="PLK-seconds" type="range" min="0" max="59">
-            <span id="PLK-points"></span>
-        </div>
-    </div>
-    <div class="card">
-        <h3 class="title">Two-Mile Run (2MR)</h3>
-        <div class="slidecontainer">
-            <input id="TMR-minutes" type="range" min="0" max="26">
-            <input id="TMR-seconds" type="range" min="0" max="59">
-            <span id="TMR-points"></span>
-        </div>
-    </div>
-
-  </div>
 	
   
     <%-include("./partials/footer")-%>
