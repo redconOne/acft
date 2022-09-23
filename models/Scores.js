@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 
 const scoresSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
   MDL: {
     type: Number,
   },
@@ -11,7 +19,7 @@ const scoresSchema = new mongoose.Schema({
     type: Number,
   },
   SDC: {
-    type: Number,
+    type: String,
   },
   PLK: {
     type: String,
