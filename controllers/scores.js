@@ -1,4 +1,3 @@
-const scores = require('../models/Scores');
 const Scores = require('../models/Scores');
 
 module.exports = {
@@ -15,6 +14,7 @@ module.exports = {
   setScores: async (req, res) => {
     try {
       await Scores.create({
+        user: req.user.id,
         MDL: req.body.MDL,
         SPT: req.body.SPT,
         HRP: req.body.HRP,
