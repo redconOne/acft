@@ -27,6 +27,9 @@ const scoresSchema = new mongoose.Schema({
   TMR: {
     type: String,
   },
+  pass: {
+    type: Boolean,
+  },
 });
 
 module.exports = mongoose.model('scores', scoresSchema);
