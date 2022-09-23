@@ -1,7 +1,3 @@
-const deleteBtn = document.querySelectorAll('.del');
-const invItem = document.querySelectorAll('.invItem');
-const changeQuantity = document.querySelectorAll('.changeQuantity');
-
 const MDLSlider = document.getElementById('MDL-slider');
 const MDLPoints = document.getElementById('MDL-points');
 MDLPoints.innerHTML = MDLSlider.value;
@@ -56,13 +52,8 @@ TMRSeconds.oninput = function () {
   TMRPoints.innerHTML = TMRMinutes.value + ':' + this.value;
 };
 
-Array.from(deleteBtn).forEach((el) => {
-  el.addEventListener('click', deleteItem);
-});
-
-Array.from(changeQuantity).forEach((el) => {
-  el.addEventListener('click', setQuantity);
-});
+const submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', setScores);
 
 async function deleteItem() {
   const invItem = this.parentNode.dataset.id;
@@ -82,20 +73,22 @@ async function deleteItem() {
   }
 }
 
-async function setQuantity() {
-  const invItem = this.parentNode.parentNode.dataset.id;
-  console.log(invItem);
-  const quantity = this.previousElementSibling.value;
-  console.log(quantity);
+async function setScores() {
   try {
-    const response = await fetch('invItems/setQuantity', {
-      method: 'put',
+    const response = await fetch('scores/setScores', {
+      method: 'post',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({
-        itemIdFromJSFile: invItem,
-        quantity: quantity,
+        MDL: Number(MDLSlider.value),
+        SPT: Number(SPTSlider.value),
+        HRP: Number(HRPSlider.value),
+        SDC: String(SDCMinutes.value + ':' + SDCSeconds.value),
+        PLK: String(PLKMinutes.value + ':' + PLKSeconds.value),
+        TMR: String(TMRMinutes.value + ':' + TMRSeconds.value),
       }),
     });
+    console.log('made it here');
+    console.log(MDLSlider.value, typeof Number(MDLSlider.value));
     const data = await response.json();
     console.log(data);
     console.log("this is what's logging to console");
