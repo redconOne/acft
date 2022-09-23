@@ -1,8 +1,8 @@
 ## Quick Installation Guide
 
 ```
-1. npm install
-2. npm start
+npm install
+npm start
 ```
 
 Go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
