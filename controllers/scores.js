@@ -24,7 +24,6 @@ module.exports = {
       });
       console.log('Score has been added!');
       res.json('Score successfully added');
-      // res.redirect('/scores');
     } catch (err) {
       console.error(err);
     }
