@@ -23,7 +23,8 @@ module.exports = {
         TMR: req.body.TMR,
       });
       console.log('Score has been added!');
-      res.redirect('/scores');
+      res.json('Score successfully added');
+      // res.redirect('/scores');
     } catch (err) {
       console.error(err);
     }
