@@ -1,29 +1,9 @@
 <%-include("./partials/header")-%>
 
 <body>
-
-	<nav>
-    <div class="">
-        <button class="btn w-64 rounded-full bg-accent">BUTTON</button>
-      <a href="/scores">ACFT TRACKER</a>
-      <a href="#" data-target="mobile-demo" class=""><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/logout">Logout</a></li>
-        
-      </ul>
-    </div>
-		<ul class="" id="mobile-demo">
-			<li><a href="/">Home</a></li>
-			<li><a href="/logout">Logout</a></li>
-			
-		</ul>
-  </nav>
-
-
+    <%-include("./partials/navigation")-%>
   <div class="">
     <h1 class="">ACFT Scores</h1>
-
     <div class="">
         <h3 class="title">3 Repetition Maximum Deadlift (MDL)</h3>
         <div class="">
@@ -69,12 +49,9 @@
             <span id="TMR-points"></span>
         </div>
     </div>
-
   </div>
-	
-  
+  <button id="submit" class="btn btn-primary">SUBMIT</button>
     <%-include("./partials/footer")-%>
 	<script src="js/script.js"></script>
 </body>
-
 </html>
