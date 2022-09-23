@@ -87,13 +87,11 @@ async function setScores() {
         TMR: String(TMRMinutes.value + ':' + TMRSeconds.value),
       }),
     });
-    console.log('made it here');
-    console.log(MDLSlider.value, typeof Number(MDLSlider.value));
     const data = await response.json();
-    console.log(data);
-    console.log("this is what's logging to console");
+    alert('Your scores have been successfully added');
     location.reload();
   } catch (err) {
+    console.log('yeah');
     console.log(err);
   }
 }
