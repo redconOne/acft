@@ -1,7 +1,7 @@
 {
   "name": "acft",
   "version": "1.0.0",
-  "description": "```\r 1. npm install\r 2. npm start\r ```",
+  "description": "```\r  npm install\r  npm start\r ```",
   "main": "server.js",
   "scripts": {
     "build-css": "postcss public/css/tailwind.css -o public/css/styles.css",
