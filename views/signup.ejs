@@ -1,22 +1,53 @@
 <%-include("./partials/header")-%>
 <body>
-    <section class="signUp">
-        <section class="signupBox">
-            <span class="invUpperTitle">ACFT TRACKER</span>
-            <h1 class="authH1">SIGN UP</h1>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Sign up!</h1>
+            <p class="py-6">We only use your email to help track you as a user and assign an ID. Your information will never be sold, and your email will never be shared. Feel free to check out our <a class="link-primary" href="https://github.com/RedconOne/ACFT" target="_blank" >open-source code!</a></p>
+          </div>
+          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <% if (locals.messages.errors) { %>
-             <% messages.errors.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <form action="/signup" method="POST">
-                <input type="text" name="userName" placeholder="User Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="password" name="confirmPassword" placeholder="Confirm Password">
-                <button type="submit" class="submit">SUBMIT</button>
+                <% messages.errors.forEach( el => { %>
+                       <div class="alert alert-danger"><%= el.msg %></div>
+                   <% }) %>    
+               <% } %>
+                <form action="/signup" method="POST" class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Username</span>
+                </label>
+                <input type="text" class="input input-bordered" placeholder='Username'/>
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input type="text" name="email" placeholder="Email" class="input input-bordered" />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Password</span>
+                </label>
+                <input type="password" name="password" placeholder="Password" class="input input-bordered">
+              </div>
+              <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Confirm Password</span>
+                </label>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" class="input input-bordered">
+              </div>
+              <div class="form-control mt-6">
+                <button type="submit" class="btn btn-primary">Sign me up!</button>
+              </div>
             </form>
-        </section>
-    </section>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
+
+
+        
+       
+
