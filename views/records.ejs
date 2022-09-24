@@ -3,52 +3,45 @@
 <body>
     <%-include("./partials/navigation")-%>
   
-    <div>
-        <h1>Previous ACFT Records</h1>
-
-        <div>
-            <ul>
-                <li>
-                    <div class="dateCol">Date</div>
-                    <div class="MDLCol">MDL</div>
-                    <div class="SPTCol">SPT</div>
-                    <div class="HRPCol">HRP</div>
-                    <div class="SDCCol">SDC</div>
-                    <div class="PLKCol">PLK</div>
-                    <div class="TMRCol">2MR</div>
-                </li>
-                <% tests.forEach( test => { %>
-                    <li data-id="<%= test._id%>">
-                        <span class="dateCol">
-                            <%= test.date %>
-                        </span>
-                        <span class="MDLCol">
-                            <%= test.MDL %>
-                        </span>
-                        <span class="SPTCol">
-                            <%= test.SPT %>
-                        </span>
-                        <span class="HRPCol">
-                            <%= test.HRP %>
-                        </span>
-                        <span class="SDCCol">
-                            <%= test.SDC %>
-                        </span>
-                        <span class="PLKCol">
-                            <%= test.PLK %>
-                        </span>
-                        <span class="TMRCol">
-                            <%= test.TMR %>
-                        </span>
-                    </li>
-                <% }) %>
-            </ul>
+    <div class="hero min-h-screen text-center bg-base-100">
+        <div class="max-w-xlg bg-base-300 card">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>MDL</th>
+                            <th>SPT</th>
+                            <th>HRP</th>
+                            <th>SDC</th>
+                            <th>PLK</th>
+                            <th>2MR</th>
+                            <th>EDIT</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% tests.forEach( test => { %>
+                            <tr class="hover">
+                                <td><%= test.createdAt.toLocaleDateString() %></td>
+                                <td><%= test.MDL %></td>
+                                <td><%= test.SPT %></td>
+                                <td><%= test.HRP %></td>
+                                <td><%= test.SDC %></td>
+                                <td><%= test.PLK %></td>
+                                <td><%= test.TMR %></td>
+                                <td><button class="btn btn-accent">EDIT</button></td>
+                                <td><button id="delete" class="btn btn-error" data-id="<%= test._id %>">DELETE</button></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-	
   
     <%-include("./partials/footer")-%>
-	<script src="js/script.js"></script>
+	<script src="js/records.js"></script>
 </body>
 
 </html>
