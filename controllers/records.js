@@ -2,9 +2,8 @@ const Scores = require('../models/Scores');
 
 module.exports = {
   getRecords: async (req, res) => {
-    console.log('getting records');
     try {
-      const scores = await Scores.find();
+      const scores = await Scores.find({ user: req.user.id });
 
       res.render('records.ejs', { tests: scores });
     } catch (err) {
@@ -42,6 +41,7 @@ module.exports = {
   },
 
   deleteRecords: async (req, res) => {
+    console.log(req.body.itemIdfromJSFile);
     try {
       await Scores.findOneAndDelete({ _id: req.body.itemIdFromJSFile });
       console.log('Deleted Score');
