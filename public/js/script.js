@@ -55,24 +55,6 @@ TMRSeconds.oninput = function () {
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', setScores);
 
-async function deleteItem() {
-  const invItem = this.parentNode.dataset.id;
-  try {
-    const response = await fetch('invItems/deleteInvItem', {
-      method: 'delete',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({
-        itemIdFromJSFile: invItem,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-    location.reload();
-  } catch (err) {
-    console.log(err);
-  }
-}
-
 async function setScores() {
   try {
     const response = await fetch('scores/setScores', {
