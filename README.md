@@ -1,5 +1,12 @@
 ## Quick Installation Guide
 
+# Things to add
+
+- Create a `.env` file in the config folder and add the following as
+  `key = value`
+  - PORT = 5000 (can be a port of your choosing)
+  - DB_STRING = `your mongo connection string`
+
 ```
 npm install
 npm start
