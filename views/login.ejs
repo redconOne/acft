@@ -1,25 +1,42 @@
 <%-include("./partials/header")-%>
 <body>
-    <section class="signUp">
-        <section class="signupBox">
-            <span class="invUpperTitle">ACFT TRACKER</span>
-            <h1 class="authH1">LOGIN</h1>
-                <% if (locals.messages.errors) { %>
-                 <% messages.errors.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <% if (locals.messages.info) { %>
-                    <% messages.info.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-            <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <button type="submit" class="submit">SUBMIT</button>
-            </form>
-        </section>
-    </section>
+    <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Login</h1>
+            <p class="py-6">Welcome back!</p>
+          </div>
+   <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+               <div class="alert alert-danger"><%= el.msg %></div>
+           <% }) %>    
+       <% } %>
+       <% if (locals.messages.info) { %>
+           <% messages.info.forEach( el => { %>
+               <div class="alert alert-danger"><%= el.msg %></div>
+           <% }) %>    
+       <% } %>
+           <form action="/login" method="POST" class="card-body">
+         
+         <div class="form-control">
+           <label class="label">
+             <span class="label-text">Email</span>
+           </label>
+           <input type="text" name="email" placeholder="Email" class="input input-bordered" />
+         </div>
+         <div class="form-control">
+           <label class="label">
+               <span class="label-text">Password</span>
+           </label>
+           <input type="password" name="password" placeholder="Password" class="input input-bordered">
+        </div>
+         <div class="form-control mt-6">
+           <button type="submit" class="submit btn btn-primary">Log me in!</button>
+         </div>
+       </form>
+     </div>
+    </div>
+     </div>
 </body>
 </html>
