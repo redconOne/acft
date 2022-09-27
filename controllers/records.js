@@ -10,7 +10,9 @@ module.exports = {
       console.error(err);
     }
   },
+
   updateRecords: async (req, res) => {
+    console.log('attempting update');
     const MDL = req.body.MDL,
       SPT = req.body.SPT,
       HRP = req.body.HRP,
