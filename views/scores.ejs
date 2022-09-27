@@ -2,9 +2,8 @@
 
 <body>
     <%-include("./partials/navigation")-%>
-    <div class="hero min-h-screen text-center bg-base-100">
-        <div class="max-w-lg bg-base-300 card">
-            <label for="MDL-modal" class="btn modal-button btn-secondary">3 Repetition Maximum Deadlift (MDL)</label>
+    <div class="min-h-screen bg-base-200 text-center grid grid-cols-2">
+            <label for="MDL-modal" class="btn modal-button btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full">3 Repetition Maximum Deadlift (MDL)</label>
             <input type="checkbox" id="MDL-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
@@ -113,7 +112,6 @@
             </div>
             
         <button id="submit" class="btn btn-primary">SUBMIT</button>
-        </div>
     </div>
     <%-include("./partials/footer")-%>
 	<script src="js/script.js"></script>
