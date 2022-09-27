@@ -21,25 +21,68 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% tests.forEach( test => { %>
+                        <% var counter=0 
+                        tests.forEach( test => {  %>
                             <tr class="hover">
                                 <td><%= test.createdAt.toLocaleDateString() %></td>
                                 <td><%= test.MDL %></td>
-                                <td><%= test.SPT %></td>
+                                <td><%= test.SPT / 10 %></td>
                                 <td><%= test.HRP %></td>
                                 <td><%= test.SDC %></td>
                                 <td><%= test.PLK %></td>
                                 <td><%= test.TMR %></td>
-                                <td><button class="btn btn-accent">EDIT</button></td>
+                                <td><label for='my-modal-<%= counter %>' class="btn btn-accent modal-button">EDIT</label></td>
                                 <td><button id="delete" class="btn btn-error" data-id="<%= test._id %>">DELETE</button></td>
+                                <input id='my-modal-<%= counter %>' type="checkbox" class="modal-toggle" />                            
+                                <div class="modal">
+                                    <div class="modal-box relative">
+                                        <label for="my-modal-<%= counter %>" class="btn btn-sm btn-circle absolute right-2 top-2">X</label>
+                                        <label class="input-group MDL">
+                                            <span>MDL</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.MDL %>"min="0" max="340">
+                                        </label>
+
+                                        <label class="input-group SPT">
+                                            <span>SPT</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.SPT / 10 %>"min="0" max="12.5">
+                                        </label>
+
+                                        <label class="input-group HRP">
+                                            <span>HRP</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.HRP %>"min="0" max="60">
+                                        </label>
+
+                                        <label class="input-group SDC">
+                                            <span>SDC</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.SDC.split(':')[0] %>"min="0" max="4">
+                                            <span>:</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.SDC.split(':')[1] %>"min="0" max="59">
+                                        </label>
+
+                                        <label class="input-group PLK">
+                                            <span>PLK</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.PLK.split(':')[0] %>"min="0" max="4">
+                                            <span>:</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.PLK.split(':')[1] %>"min="0" max="59">
+                                        </label>
+
+                                        <label class="input-group TMR">
+                                            <span>2MR</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.TMR.split(':')[0] %>"min="0" max="4">
+                                            <span>:</span>
+                                            <input type="number" class='input input-bordered' placeholder="<%= test.TMR.split(':')[1] %>"min="0" max="59">
+                                        </label>
+
+                                        <button id="submit" class="btn btn-primary" data-id="<%= test._id %>">Update</button>
+                                    </div>
+                                </div>
                             </tr>
-                        <% }) %>
+                        <% counter++ }) %>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-  
     <%-include("./partials/footer")-%>
 	<script src="js/records.js"></script>
 </body>
