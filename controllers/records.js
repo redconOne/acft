@@ -12,14 +12,12 @@ module.exports = {
   },
 
   updateRecords: async (req, res) => {
-    console.log('attempting update');
     const MDL = req.body.MDL,
       SPT = req.body.SPT,
       HRP = req.body.HRP,
       SDC = req.body.SDC,
       PLK = req.body.PLK,
       TMR = req.body.TMR;
-
     try {
       await Scores.findOneAndUpdate(
         {
