@@ -2,114 +2,116 @@
 
 <body>
     <%-include("./partials/navigation")-%>
-    <div class="min-h-screen bg-base-200 text-center grid grid-cols-2">
-            <label for="MDL-modal" class="btn modal-button btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full">3 Repetition Maximum Deadlift (MDL)</label>
-            <input type="checkbox" id="MDL-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">3 Repetition Maximum Deadlift (MDL)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="MDL-slider" class="range range-primary" type="range" mix="0" max="340" value="170">
-                        <span id="MDL-points"></span>
-                    </label>
-                    <div class="modal-action">
-                        <label for="MDL-modal" class="btn btn-primary">CLOSE</label>
+    <div class="min-h-screen bg-base-200 text-center grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
+
+        <div class="card bg-base-100 shadow xl w-full">
+            <div class="card-body">
+                <h2 class="card-title justify-center">Identifiers (Do this section first)</h2>
+                <div class="justify-center">
+                    <select id="gender" class="select select-bordered w-full max-w-xs justify-center">
+                        <option disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="justify-center">
+                    <select id="age-group" class="select select-bordered w-full max-w-xs justify-center">
+                        <option disabled selected>Age Group</option>
+                        <option value="1">17-21</option>
+                        <option value="2">22-26</option>
+                        <option value="3">27-31</option>
+                        <option value="4">32-36</option>
+                        <option value="5">37-41</option>
+                        <option value="6">42-46</option>
+                        <option value="7">47-51</option>
+                        <option value="8">52-56</option>
+                        <option value="9">57-61</option>
+                        <option value="10">Over 62</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">3 Repetition Maximum Deadlift (MDL)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="MDL-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="MDL-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='MDL-slider' value='0' type="range" class="range range-primary" min="0" max="340">
                 </div>
             </div>
 
-            <label for="SPT-modal" class="btn modal-button btn-accent">Standing Power Throw (SPT)</label>
-            <input type="checkbox" id="SPT-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">Standing Power Throw (SPT)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="SPT-slider" class="w-full range range-primary" type="range" mix="0" max="125" value="62">
-                        <span id="SPT-points"></span>
-                    </label>
-                    <div class="modal-action">
-                        <label for="SPT-modal" class="btn btn-primary">CLOSE</label>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">Standing Power Throw (SPT)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="SPT-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="SPT-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='SPT-slider' value='0' type="range" class="range range-primary" min="0" max="140">
                 </div>
             </div>
 
-            <label for="HRP-modal" class="btn modal-button btn-secondary">Hand Release Pushup (HRP)</label>
-            <input type="checkbox" id="HRP-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">Hand Release Pushups (HRP)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="HRP-slider" class="w-full range range-primary" type="range" mix="0" max="60" value="30">
-                        <span id="HRP-points"></span>
-                    </label>
-                    <div class="modal-action">
-                        <label for="HRP-modal" class="btn btn-primary">CLOSE</label>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">Hand release Push-Up (HRP)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="HRP-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="HRP-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='HRP-slider' value='0' type="range" class="range range-primary" min="0" max="62">
                 </div>
             </div>
 
-            <label for="SDC-modal" class="btn modal-button btn-accent">Sprint Drag Carry (SDC)</label>
-            <input type="checkbox" id="SDC-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">Sprint Drag Carry (SDC)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="SDC-minutes" class="w-full range range-primary" type="range" mix="0" max="4" value="2">
-                        <span id="SDC-points"></span>
-                    </label>
-                    <br>
-                    <label class="input-group">
-                        <input id="SDC-seconds" class="w-full range range-primary" type="range" mix="0" max="59" value="30">
-                    </label>
-                    <div class="modal-action">
-                        <label for="SDC-modal" class="btn btn-primary">CLOSE</label>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">Sprint Drag Carry (SDC)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="SDC-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="SDC-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='SDC-minutes' type="range" class="range range-primary" value='0' min="0" max="5">
+                    <input id='SDC-seconds' type="range" class="range range-primary" value='0' min="0" max="59">
                 </div>
             </div>
 
-            <label for="PLK-modal" class="btn modal-button btn-secondary">Plank (PLK)</label>
-            <input type="checkbox" id="PLK-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">Plank (PLK)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="PLK-minutes" class="w-full range range-primary" type="range" mix="0" max="4" value="2">
-                        <span id="PLK-points"></span>
-                    </label>
-                    <br>
-                    <label class="input-group">
-                        <input id="PLK-seconds" class="w-full range range-primary" type="range" mix="0" max="59" value="30">
-                    </label>
-                    <div class="modal-action">
-                        <label for="PLK-modal" class="btn btn-primary">CLOSE</label>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">Plank (PLK)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="PLK-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="PLK-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='PLK-minutes' type="range" class="range range-primary" value='0' min="0" max="5">
+                    <input id='PLK-seconds' type="range" class="range range-primary" value='0' min="0" max="59">
                 </div>
             </div>
 
-            <label for="TMR-modal" class="btn modal-button btn-accent">Two Mile Run (2MR)</label>
-            <input type="checkbox" id="TMR-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h2 class="text-2xl font-bold">Two Mile Run (2MR)</h2>
-                    <br>
-                    <label class="input-group">
-                        <input id="TMR-minutes" class="w-full range range-primary" type="range" mix="0" max="4" value="2">
-                        <span id="TMR-points"></span>
-                    </label>
-                    <br>
-                    <label class="input-group">
-                        <input id="TMR-seconds" class="w-full range range-primary" type="range" mix="0" max="59" value="30">
-                    </label>
-                    <div class="modal-action">
-                        <label for="TMR-modal" class="btn btn-primary">CLOSE</label>
+            <div class="card bg-base-100 shadow xl w-full">
+                <div class="card-body">
+                    <h2 class="card-title">2 Mile Run (2MR)</h2>
+                    <div>
+                        <div class="input-group">
+                            <input id="TMR-score" type="text" placeholder="0" class="input input-bordered input-primary w-full max-w-xs" />
+                            <span id="TMR-points">0 points</span>
+                        </div>
                     </div>
+                    <input id='TMR-minutes' type="range" class="range range-primary" value='0' min="13" max="27">
+                    <input id='TMR-seconds' type="range" class="range range-primary" value='0' min="0" max="59">
                 </div>
             </div>
+
             
         <button id="submit" class="btn btn-primary">SUBMIT</button>
     </div>
