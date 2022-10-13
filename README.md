@@ -71,7 +71,7 @@
 ## About
 
 <div align="center">
-  <img src="./public/img/acftLanding.png" alt="project landing page image" width="400px" />
+  <img src="./public/img/acftLanding.png" alt="project landing page image" width="700px" />
 </div>
 
 <br />
